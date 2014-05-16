@@ -2,12 +2,15 @@
 // endbower
 
 $orange: #e67e22;
+$green:#27ae60;
+$salad: #2ecc71;
 
 
 body {
-    background: $orange;
+    background: url("../images/background.png");
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color:  $orange;
+    color:  $green;
+    border: 2px solid $salad; 
 }
 
 .hero-unit {
@@ -16,15 +19,42 @@ body {
     font-size: 18px;
     font-weight: 200;
     line-height: 30px;
-    background-color: #eee;
+    background-color: $green;
     border-radius: 6px;
     padding: 60px;
-    h1 {
-        font-size: 60px;
-        line-height: 1;
-        letter-spacing: -1px;
-    }
-}
+         h1 {
+                 font-size: 60px;
+                 line-height: 1;
+                 letter-spacing: -1px;
+                 color: white;
+                 padding: 30px 40px;
+                 text-align: center;
+                 margin: 0px;
+             }
+
+
+                        form {
+                                background:#2ecc71;
+
+                                }
+
+                                form .text { 
+                                    background:#fff;
+
+                                }
+
+
+                                    p  {   
+
+                                        color: white;
+
+                                    }
+}                                           ul { 
+                                                    color:#fff;
+                                                    }
+
+
+
 
 .browsehappy {
     margin: 0.2em 0;
