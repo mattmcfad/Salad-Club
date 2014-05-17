@@ -9,37 +9,57 @@ $salad: #2ecc71;
 body {
     background: url("../images/background.png");
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color:  $green;
-    border: 2px solid $salad; 
+    background: url("../images/wood.png")
+   
 }
 
-.hero-unit {
+.greenbox {
     margin: 50px auto 0 auto;
-    width: 300px;
+
+    max-width: 300px;
     font-size: 18px;
     font-weight: 200;
     line-height: 30px;
     background-color: $green;
-    border-radius: 6px;
-    padding: 60px;
+    border-radius: 20px;
+    border: 19px outset $salad;
+    padding: 60px; 
+
+   
          h1 {
                  font-size: 60px;
-                 line-height: 1;
-                 letter-spacing: -1px;
                  color: white;
-                 padding: 30px 40px;
+                 line-height: -5;
+                 padding: 0px 40px;
                  text-align: center;
-                 margin: 0px;
+                 margin: 0px 0px 90px 0px;
+                 display: block;
              }
 
 
-                        form {
-                                background:#2ecc71;
+                  
 
-                                }
 
-                                form .text { 
-                                    background:#fff;
+                        img {     
+                                height: 35%;
+                                width: 35%;
+                                margin-bottom:100px;
+                                margin-left: 90px;
+                            }
+
+                              form {
+                                     background:#2ecc71;
+                                     border-radius:5px;
+                                     text-align: center;
+                                     padding: 18px 10px;
+
+                                     }
+
+                                form .placeholder { 
+                                    background: black;
+
+                                    
+
 
                                 }
 
