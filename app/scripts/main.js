@@ -7,19 +7,23 @@ $(function (){
 	//pull in data
 	myDataRef.on('child_added', function(snapshot) {
 		var newItem = snapshot.val();
-		$('ul').append('<li>' + newItem.item + '</li>');
+		$('ul').append('<li>' +'<span class=\"name\">'+ newItem.person+ '</span> : ' + newItem.item + '</li>');
 	});
 
 
 	//on hitting enter
-	$('form').on('submit', function(e) {
+	$('form button').on('click', function(e) {
 		e.preventDefault();
 		//if input not empty
-		if($('input').val() !== '') {
+		if($('input.item').val() !== '') {
 			//get value of input
-			var bringingItem = $('input').val();
+			console.log('test');
+			
+			var name = $('input.name').val();
+			var item = $('input.item').val();
+			console.log('name: '+ name + ' item: ' + item)
 			//push to db
-			myDataRef.push({item: bringingItem});
+			myDataRef.push({person: name, item: item});
 			//clear input field
 			$('input').val('');
 		}
