@@ -11,17 +11,18 @@ $(function (){
 	});
 
 
-	//on hitting enter
+	//on form submit
 	$('form button').on('click', function(e) {
 		e.preventDefault();
-		//if input not empty
-		if($('input.item').val() !== '') {
+		//if both inputs not empty
+		if($('input.name').val() !== '' && $('input.item').val() !== '') {
 			//get value of input
 			console.log('test');
 			
+			//get input values
 			var name = $('input.name').val();
 			var item = $('input.item').val();
-			console.log('name: '+ name + ' item: ' + item)
+			console.log('name: '+ name + ' item: ' + item);
 			//push to db
 			myDataRef.push({person: name, item: item});
 			//clear input field
