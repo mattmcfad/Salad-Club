@@ -1,9 +1,10 @@
 // bower:scss
 // endbower
 
-$orange: #e67e22;
 $green:#27ae60;
 $salad: #2ecc71;
+$white: #ecf0f1;
+$grey: #95a5a6;
 
 
 body {
@@ -29,7 +30,7 @@ body {
          h1 {
                  font-size: 60px;
                  color: white;
-                 line-height: -5;
+                 line-height: -10;
                  padding: 0px 40px;
                  text-align: center;
                  margin: 0px 0px 90px 0px;
@@ -40,45 +41,44 @@ body {
                   
 
 
-                        img {     
-                                height: 35%;
-                                width: 35%;
-                                margin-bottom:100px;
-                                margin-left: 90px;
-                            }
+        img {     
+                height: 55%;
+                width: 55%;
+                margin-bottom:100px;
+                margin-left: 60px;
+            }
 
-                              form {
-                                     background:#2ecc71;
-                                     border-radius:5px;
-                                     text-align: center;
-                                     padding: 18px 10px;
+         form {
+             background:#2ecc71;
+             border-radius:5px;
+             text-align: center;
+             padding: 18px 10px;
 
-                                     }
+             }
 
-                                form .placeholder { 
-                                    background: black;
+        form .placeholder { 
+            background: black;
 
-                                    
-
-
-                                }
+            
 
 
-                                    p  {   
-
-                                        color: white;
-
-                                    }
-}                                           ul { 
-                                                    color:#fff;
-                                                    }
+        }
 
 
+        p  {   
+
+            color: white;
 
 
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+        }
 }
+                    
+
+
+              
+                
+                         
+
+
+
+
