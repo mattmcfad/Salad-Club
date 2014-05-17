@@ -37,7 +37,7 @@ body {
    
          h1 {
                  font-size: 60px;
-                 color: white;
+                 color: white;               
                  line-height: 1;
                  padding: 0px 40px;
                  text-align: center;
@@ -52,8 +52,10 @@ body {
         img {     
                 height: 65%;
                 width: 65%;
-                margin-bottom:100px;
-                margin-left: 50px;
+                padding: 0px;
+                margin-bottom:30px;
+                margin-left: 55px;
+                display: inline;
             }
 
          form {
@@ -87,23 +89,30 @@ body {
         p  {   
 
             color: white;
+            text-align: center;
+            font-size: 22px;
 
 
         }
 
 
-        button { 
-                 background: -linear-gradient (top, $salad, #27ae60);             
+         button { 
+                background: -webkit-gradient(linear, 0 0, 0 50%, from(#faa51a), to(#f47a20));
+                background: -webkit-linear-gradient(#27AE60, #1E8349);
+                background: -moz-linear-gradient(#27AE60, #1E8349);
+                background: -o-linear-gradient(#27AE60, #1E8349);
+                background: linear-gradient(#27AE60, #1E8349);          
                   margin: 20px 0px 20px 0px;
                   height: 35px;
                   width: 150px;
+                  border: 4px outset #bdc3c7;
                   border-radius:20px;
-                  // border: 3px solid $grey;
                   font-size: 14px;
-                  color: $green;
-
+                  color: white;
+                  
+         
                 
-
+         
          }
 
         
@@ -111,6 +120,21 @@ body {
 }
                     
 
+.input { 
+
+                ul li { 
+
+                        lighten(#59cf77, 90%);
+                       
+                        
+                }
+
+
+
+
+
+
+}
 
               
                 
