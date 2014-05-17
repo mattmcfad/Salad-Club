@@ -3,7 +3,21 @@
 
 $(function (){
 	var myDataRef = new Firebase('https://boiling-fire-202.firebaseio.com/');
-	
+	var auth = new FirebaseSimpleLogin(myDataRef, function(error, user) {
+		if (error) {
+			// error occurred while attempting login
+			alert(error);
+		} else if (user) {
+			//user authenticated with Firebase
+			alert('User ID: ' + user.id + ', Provider:' + user.provider);
+		} else {
+			//user is logged out
+		}
+	});
+
+	auth.login('twitter');
+
+
 	//pull in data
 	myDataRef.on('child_added', function(snapshot) {
 		var newItem = snapshot.val();
