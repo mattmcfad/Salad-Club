@@ -5,6 +5,14 @@ $green:#27ae60;
 $salad: #2ecc71;
 $white: #ecf0f1;
 $grey: #95a5a6;
+$orange: #f39c12;
+
+
+* { 
+    font-family: Helvetica, sans-serif,Arial;
+
+}
+
 
 
 body {
@@ -49,15 +57,26 @@ body {
             }
 
          form {
-                  background:#2ecc71;
+             background:#2ecc71;
              border-radius:5px;
              text-align: center;
-             padding: 28px 20px;
+             padding: 20px;
+             margin: 0px 10px;
+            border-radius:20px;
+
 
              }
 
-        form .placeholder { 
-            background: black;
+        form input  { 
+             background: $white;
+              height: 15px;
+              width: 200px;
+              margin: 10px 0px;
+              padding: 10px;
+               border-radius:20px;
+               text-align: center;
+               font-size: 13px;
+
 
             
 
@@ -71,6 +90,24 @@ body {
 
 
         }
+
+
+        button { 
+                 background: -linear-gradient (top, $salad, #27ae60);             
+                  margin: 20px 0px 20px 0px;
+                  height: 35px;
+                  width: 150px;
+                  border-radius:20px;
+                  // border: 3px solid $grey;
+                  font-size: 14px;
+                  color: $green;
+
+                
+
+         }
+
+        
+
 }
                     
 
