@@ -6,16 +6,20 @@ $(function (){
 	var auth = new FirebaseSimpleLogin(myDataRef, function(error, user) {
 		if (error) {
 			// error occurred while attempting login
-			alert(error);
+			console.log(error);
+			alert("Error while attempting to login");
 		} else if (user) {
 			//user authenticated with Firebase
-			alert('User ID: ' + user.id + ', Provider:' + user.provider);
+			alert('Login Successful!\n' + 'Welcome: ' + user.displayName );
 		} else {
 			//user is logged out
 		}
 	});
 
-	auth.login('twitter');
+	auth.login('github', {
+  		rememberMe: true,
+  		scope: 'user,gist'
+	});
 
 
 	//pull in data
