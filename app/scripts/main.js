@@ -2,50 +2,87 @@
 'use strict';
 
 $(function (){
+
+	//client side array of inputted data
+	var arr = [];
+
+	//Get DB from Firebase
 	var myDataRef = new Firebase('https://boiling-fire-202.firebaseio.com/');
+	
+	//for popup reminding user to login-
+	var loggedIn = false;
+
+	//authentication
 	var auth = new FirebaseSimpleLogin(myDataRef, function(error, user) {
 		if (error) {
 			// error occurred while attempting login
 			console.log(error);
-			alert("Error while attempting to login");
+			alert('Error while attempting to login');
 		} else if (user) {
 			//user authenticated with Firebase
 			alert('Login Successful!\n' + 'Welcome: ' + user.displayName );
+			loggedIn = true;
 		} else {
 			//user is logged out
 		}
 	});
 
+	//initiate login through github
 	auth.login('github', {
   		rememberMe: true,
   		scope: 'user,gist'
-	});
-
+	});	
 
 	//pull in data
 	myDataRef.on('child_added', function(snapshot) {
 		var newItem = snapshot.val();
+		//input entry in client side array
+		arr.push({
+			name: newItem.person,
+			item: newItem.item
+		});
+		//append each item to the list
 		$('ul').append('<li>' +'<span class=\"name\">'+ newItem.person+ '</span> : ' + newItem.item + '</li>');
 	});
 
-
-	//on form submit
+	//Clicking "Add!" button to add Name and Item
 	$('form button').on('click', function(e) {
-		e.preventDefault();
-		//if both inputs not empty
-		if($('input.name').val() !== '' && $('input.item').val() !== '') {
-			//get value of input
-			console.log('test');
-			
-			//get input values
-			var name = $('input.name').val();
-			var item = $('input.item').val();
-			console.log('name: '+ name + ' item: ' + item);
-			//push to db
-			myDataRef.push({person: name, item: item});
-			//clear input field
-			$('input').val('');
+		
+		//ensure user is logged in
+		if(loggedIn === false){
+			alert('Error: not logged in \n Please login through the Github popup');
 		}
+		else {
+			e.preventDefault();
+			//if both inputs not empty
+			if($('input.name').val() !== '' && $('input.item').val() !== '') {
+				
+				
+				//get input values
+				var name = $('input.name').val();
+				var item = $('input.item').val();
+				var alreadyBrought = false;
+				//iterate through array of brought items
+				for(var i = 0; i < arr.length; i++) {
+					//test if item already is being brought
+					if(arr[i].item === item){
+						alert(arr[i].name + ' is already bringing ' + item  +  ' why don\'t you bring something else?');
+						alreadyBrought = true;
+					} 
+				}
+
+				if (alreadyBrought !== true){
+					//push to db
+					myDataRef.push({person: name, item: item});
+					//clear input field
+					$('input').val('');
+				}
+				else {
+					$('input.item').val('');
+				}
+			}
+		}
+
 	});
 
 	
