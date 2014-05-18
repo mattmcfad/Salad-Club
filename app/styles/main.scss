@@ -7,255 +7,186 @@ $white: #ecf0f1;
 $grey: #95a5a6;
 $orange: #f39c12;
 
-
 * { 
-    font-family: Helvetica, sans-serif,Arial;
+  font-family: Helvetica, sans-serif,Arial;
 
 }
-
-
 
 body {
-    background: url("../images/background.png");
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background: url("../images/wood.png")
-   
+  background: url("../images/background.png");
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: url("../images/wood.png")
 }
-
-
 
 .greenbox {
-    margin: 50px auto 50px auto;
-    box-shadow: 25px 25px 100px black;
-    max-width: 300px;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 30px;
-    background-color: $green;
-    border-radius: 20px;
-    border: 20px outset $salad;
-    padding: 60px; 
-   
-         h1 {
-                 font-size: 60px;
-                 color: white;               
-                 line-height: 1;
-                 padding: 0px 40px;
-                 text-align: center;
-                 margin: 0px 0px 40px 0px;
-                 display: block;
-                 
-                  @media (max-width: 460px){
-                      font-size: 40px;
-                       color: white;               
-                       line-height: 1;
-                       padding: 0px 40px;
-                       text-align: center;
-                       margin: 0px 0px 40px 0px;
-                       display: block;
+  margin: 50px auto 50px auto;
+  box-shadow: 25px 25px 100px black;
+  max-width: 300px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  background-color: $green;
+  border-radius: 20px;
+  border: 20px outset $salad;
+  padding: 60px; 
+ 
+  h1 {
+    font-size: 60px;
+    color: white;               
+    line-height: 1;
+    padding: 0px 40px;
+    text-align: center;
+    margin: 0px 0px 40px 0px;
+    display: block;
+     
+    @media (max-width: 460px){
+      font-size: 40px;
+      color: white;               
+      line-height: 1;
+      padding: 0px 40px;
+      text-align: center;
+      margin: 0px 0px 40px 0px;
+      display: block;
+    } 
+  }//h1
 
-                  }
+  .fork {     
+    height: 65%;
+    width: 65%;
+    padding: 0px;
+    margin-bottom:40px;
+    margin-left: 55px;
+    display: inline;
 
-
-             }
-
-
-                  
-
-
-        .fork {     
-                height: 65%;
-                width: 65%;
-                padding: 0px;
-                margin-bottom:40px;
-                margin-left: 55px;
-                display: inline;
-
-                  
-
-                                      @media (max-width: 460px){
-                                        height: 45%;
-                                      width: 45%;
-                                      padding: 0px;
-                                      margin-bottom:40px;
-                                      margin-left: 64px;
-                                      display: inline;
-
-                                      }
-
-              }
-
-        
-
-         form {
-             background:#2ecc71;
-             border-radius:5px;
-             text-align: center;
-             padding: 20px;
-             margin: 0px 10px;
-            border-radius:20px;
-
-
-             }
-
-        form input  { 
-             background: $white;
-              height: 15px;
-              width: 200px;
-              margin: 10px 0px;
-              padding: 10px;
-               border-radius:20px;
-               text-align: center;
-               font-size: 13px;
-
-                                     @media (max-width: 460px) {
-                                    background: $white;
-                                    height: 9px;
-                                    width: 100px;
-                                    margin: 10px 0px;
-                                    padding: 10px;
-                                     border-radius:20px;
-                                     text-align: center;
-                                     font-size: 10px;
-                          
-                                     }
-
-                      
-          }
-
-        
-
-
-        p  {   
-
-            color: white;
-            text-align: center;
-            font-size: 22px;
-            margin: 40px 0px 10px 0px;
-            padding-bottom: 10px;
-            border-bottom: 1px white solid;
-            display:block;
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 2px;
-
-                              @media (max-width: 460px) {
-
-                                 color: white;
-                              text-align: center;
-                              font-size: 14px;
-                              margin: 40px 0px 10px 0px;
-                              padding-bottom: 10px;
-                              border-bottom: 1px white solid;
-                              display:block;
-                              text-transform: uppercase;
-                              font-weight: bold;
-                              letter-spacing: 2px;
-                              }
-
-
-             }
-
-
-
+    @media (max-width: 460px){
+      height: 45%;
+      width: 45%;
+      padding: 0px;
+      margin-bottom:40px;
+      margin-left: 64px;
+      display: inline;
+    }
+  }//.fork
        
+  form {
+    background:#2ecc71;
+    border-radius:5px;
+    text-align: center;
+    padding: 20px;
+    margin: 0px 10px;
+    border-radius:20px;
 
+    input {
+      background: $white;
+      height: 15px;
+      width: 200px;
+      margin: 10px 0px;
+      padding: 10px;
+      border-radius:20px;
+      text-align: center;
+      font-size: 13px;
 
-      
-         button { 
-                  background: -webkit-gradient(linear, 0 0, 0 50%, from(#faa51a), to(#f47a20));
-                  background: -webkit-linear-gradient(#27AE60, #1E8349);
-                  background: -moz-linear-gradient(#27AE60, #1E8349);
-                  background: -o-linear-gradient(#27AE60, #1E8349);
-                  background: linear-gradient(#27AE60, #1E8349);          
-                  margin: 20px 0px 20px 0px;
-                  height: 35px;
-                  width: 150px;
-                  border: 4px outset #bdc3c7;
-                  border-radius:20px;
-                  font-size: 14px;
-                  color: white;
-                  outline: 0;
+      @media (max-width: 460px) {
+        background: $white;
+        height: 9px;
+        width: 100px;
+        margin: 10px 0px;
+        padding: 10px;
+        border-radius:20px;
+        text-align: center;
+        font-size: 10px;
 
+      }//media
+    }//input
+  }//form
 
+  p  {   
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    margin: 40px 0px 10px 0px;
+    padding-bottom: 10px;
+    border-bottom: 1px white solid;
+    display:block;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
 
-                    
-                &:active { 
-                        
-                  background: -webkit-gradient(linear, 0 0, 0 50%, from(#faa51a), to(#f47a20));
-                  background: -webkit-linear-gradient(#27AE60, #1E8349);
-                  background: -moz-linear-gradient(#27AE60, #1E8349);
-                  background: -o-linear-gradient(#27AE60, #1E8349);
-                  background: linear-gradient(#27AE60, #1E8349);          
-                  margin: 20px 0px 20px 0px;
-                  height: 35px;
-                  width: 150px;
-                  border: 4px inset #bdc3c7;
-                  border-radius:20px;
-                  font-size: 14px;
-                  color: white;
-                  outline: 0;
+    @media (max-width: 460px) {
+      color: white;
+      text-align: center;
+      font-size: 14px;
+      margin: 40px 0px 10px 0px;
+      padding-bottom: 10px;
+      border-bottom: 1px white solid;
+      display:block;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+  }//p
 
-        
+  button { 
+    background: -webkit-gradient(linear, 0 0, 0 50%, from(#faa51a), to(#f47a20));
+    background: -webkit-linear-gradient(#27AE60, #1E8349);
+    background: -moz-linear-gradient(#27AE60, #1E8349);
+    background: -o-linear-gradient(#27AE60, #1E8349);
+    background: linear-gradient(#27AE60, #1E8349);          
+    margin: 20px 0px 20px 0px;
+    height: 35px;
+    width: 150px;
+    border: 4px outset #bdc3c7;
+    border-radius:20px;
+    font-size: 14px;
+    color: white;
+    outline: 0;
 
-                            }    
-                
-                &:hover {
-                  background: -webkit-gradient(linear, 0 0, 0 50%, from(#faa51a), to(#f47a20));
-                  background: -webkit-linear-gradient(#27ae60, #1E8349);
-                  background: -moz-linear-gradient(#27ae60, #1E8349);
-                  background: -o-linear-gradient(#27ae60, #1E8349);
-                  background: linear-gradient(#27ae60, #1E8349); 
-         
-                }
-          
+    &:active { 
+      background: -webkit-gradient(linear, 0 0, 0 50%, from(#faa51a), to(#f47a20));
+      background: -webkit-linear-gradient(#27AE60, #1E8349);
+      background: -moz-linear-gradient(#27AE60, #1E8349);
+      background: -o-linear-gradient(#27AE60, #1E8349);
+      background: linear-gradient(#27AE60, #1E8349);          
+      margin: 20px 0px 20px 0px;
+      height: 35px;
+      width: 150px;
+      border: 4px inset #bdc3c7;
+      border-radius:20px;
+      font-size: 14px;
+      color: white;
+      outline: 0;
+    }    
 
-                }
-         
+    &:hover {
+      background: -webkit-gradient(linear, 0 0, 0 50%, from(#faa51a), to(#f47a20));
+      background: -webkit-linear-gradient(#27ae60, #1E8349);
+      background: -moz-linear-gradient(#27ae60, #1E8349);
+      background: -o-linear-gradient(#27ae60, #1E8349);
+      background: linear-gradient(#27ae60, #1E8349); 
+    }
+  }//button
+  
+  .input { 
 
-         }
+    ul {  
+      margin: 0px;
+      padding: 0px;
 
-                    
+      li {
+        color: white;
+        display: block;
+        list-style-type: none;
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+      }//li
+    }//ul
 
-.input { 
+    .name { 
+      text-transform: uppercase; 
+    }
+  }//input
+}//greenbox               
 
-
-                ul {  
-
-                        margin: 0px;
-                        padding: 0px;
-
-                }
-
-
-
-                ul li { 
-
-                        color: white;
-                        display: block;
-                        list-style-type: none;
-                        text-align: center;
-                        margin: 0px;
-                        padding: 0px;
-
-                    }
-                       
-                        .name { text-transform: uppercase; 
-                }
-
-
-
-
-
-
-}
 
               
-                
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ RESPONSIVE ^^^^^^^^^^^^^^^^^^^^^^^ 
-
-
-
- 
-
-

@@ -20,27 +20,19 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-           
-
         <div class="greenbox">
-             <h1>SALAD CLUB</h1>
-             <img class="fork" src="../images/fork.png">
-
-
+            <h1>SALAD CLUB</h1>
+            <img class="fork" src="../images/fork.png">
             <form>
-                 <input class ="name"type="text" placeholder="Name">
-                 <input class = "item" type="text" placeholder="Add an item">
-                 
-
+                <input class ="name"type="text" placeholder="Name">
+                <input class = "item" type="text" placeholder="Add an item">
                 <button type="button">
                 Add!</button>
-            
             </form>
-                    <p>So far we have :</p>
-             
-
+            <p>So far we have :</p>
             <div class="input">
-                <ul>
+            	<ul>
+            	<!-- append li's through Firebase it -->
                 </ul>
             </div><!-- input -->   
         </div><!-- greenbox -->
@@ -63,15 +55,15 @@
 
         <!-- Firebase DB -->
         <script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
-
+		<!-- Firebase DB simplelogin -->
         <script type='text/javascript'
         src='https://cdn.firebase.com/js/simple-login/1.4.1/firebase-simple-login.js'>
-</script>
+		</script>
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="../scripts/main.js"></script>
         <!-- endbuild -->
         
         <!-- jQuery -->
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
-</body>
+	</body>
 </html>
