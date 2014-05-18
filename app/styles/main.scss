@@ -22,9 +22,11 @@ body {
    
 }
 
-.greenbox {
-    margin: 50px auto 0 auto;
 
+
+.greenbox {
+    margin: 50px auto 50px auto;
+    box-shadow: 25px 25px 100px black;
     max-width: 300px;
     font-size: 18px;
     font-weight: 200;
@@ -42,20 +44,26 @@ body {
                  text-align: center;
                  margin: 0px 0px 40px 0px;
                  display: block;
+                 
+
+
              }
 
 
                   
 
 
-        img {     
+        .fork {     
                 height: 65%;
                 width: 65%;
                 padding: 0px;
                 margin-bottom:40px;
                 margin-left: 55px;
                 display: inline;
+
             }
+
+         
 
          form {
              background:#2ecc71;
@@ -148,8 +156,11 @@ body {
                   background: linear-gradient(#27ae60, #1E8349); 
          
                 }
+          
+
                 }
          
+
          }
 
                     
