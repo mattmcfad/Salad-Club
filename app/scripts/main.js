@@ -12,7 +12,7 @@ $(function (){
 	//for popup reminding user to login-
 	var loggedIn = false;
 
-	//authentication
+	//authentication through github login
 	var auth = new FirebaseSimpleLogin(myDataRef, function(error, user) {
 		if (error) {
 			// error occurred while attempting login
@@ -57,7 +57,6 @@ $(function (){
 			//if both inputs not empty
 			if($('input.name').val() !== '' && $('input.item').val() !== '') {
 				
-				
 				//get input values
 				var name = $('input.name').val();
 				var item = $('input.item').val();
@@ -65,8 +64,8 @@ $(function (){
 				//iterate through array of brought items
 				for(var i = 0; i < arr.length; i++) {
 					//test if item already is being brought
-					if(arr[i].item === item){
-						alert(arr[i].name + ' is already bringing ' + item  +  ' why don\'t you bring something else?');
+					if(arr[i].item.toLowerCase() === item.toLowerCase()){
+						alert(arr[i].name + ' is already bringing ' + arr[i].item  +  ' why don\'t you bring something else?');
 						alreadyBrought = true;
 					} 
 				}
@@ -80,10 +79,7 @@ $(function (){
 				else {
 					$('input.item').val('');
 				}
-			}
-		}
-
-	});
-
-	
+			}//if name and input fields not empty
+		}//else logged in
+	});//form submit
 });
