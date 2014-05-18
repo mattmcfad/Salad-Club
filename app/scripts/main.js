@@ -69,10 +69,15 @@ $(function (){
 						alreadyBrought = true;
 					} 
 				}
-				
+
 				if (alreadyBrought !== true){
 					//push to db
 					myDataRef.push({person: name, item: item});
+					//push to local array
+					arr.push({
+						name: name,
+						item: item
+					});
 					//clear input field
 					$('input').val('');
 				}
