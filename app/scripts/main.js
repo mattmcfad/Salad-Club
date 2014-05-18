@@ -69,7 +69,7 @@ $(function (){
 						alreadyBrought = true;
 					} 
 				}
-
+				
 				if (alreadyBrought !== true){
 					//push to db
 					myDataRef.push({person: name, item: item});
