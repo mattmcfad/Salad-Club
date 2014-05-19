@@ -6,7 +6,7 @@ Salad Club
 ##[Live Demo](http://mmcfadyen.ca/saladclub)
 ###To collaborate: 
 
-####npm install 
-####bower install firebase
-####bower install firebase-simple-login
-####grunt serve
+`npm install` 
+`bower install firebase`
+`bower install firebase-simple-login`
+`grunt serve`
