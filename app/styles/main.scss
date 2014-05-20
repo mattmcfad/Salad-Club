@@ -190,15 +190,19 @@ body {
 
 
 h2 {
-  font-size: 30px;
-  color: #000;
+  font-size: 16px;
+  color: #fff;
+  font-family: Helvetica;
   text-align: center;
+          
+            a { text-decoration: none;
+                color: $green;
+                font-size: 16px;
+            }
+ }
 
-  a {
-    color: $green;
-    text-decoration: none;
-  }
-}
+
+
 
 .dialog-box {
   background-color: red;
