@@ -17,10 +17,10 @@ $(function (){
 		if (error) {
 			// error occurred while attempting login
 			console.log(error);
-			alert('Error while attempting to login');
+		//	alert('Error while attempting to login');
 		} else if (user) {
 			//user authenticated with Firebase
-			alert('Login Successful!\n' + 'Welcome: ' + user.displayName );
+		//	alert('Login Successful!\n' + 'Welcome: ' + user.displayName );
 			loggedIn = true;
 		} else {
 			//user is logged out
@@ -44,6 +44,8 @@ $(function (){
 		//append each item to the list
 		$('ul').append('<li>' +'<span class=\"name\">'+ newItem.person+ '</span> : ' + newItem.item + '</li>');
 	});
+
+
 
 	//Clicking "Add!" button to add Name and Item
 	$('form button').on('click', function(e) {
@@ -87,4 +89,20 @@ $(function (){
 			}//if name and input fields not empty
 		}//else logged in
 	});//form submit
-});
+	
+	//ERROR NOT LOGGED IN!
+	$("#dialog-box-error").dialog({
+	    modal: true,
+	    draggable: false,
+	    resizable: false,
+	    position: ['center', 'top'],
+	    width: 400,
+	    dialogClass: 'ui-dialog-osx',
+	    buttons: {
+	        "I've read and understand this": function() {
+	            $(this).dialog("close");
+	        }
+	    }
+	});//dialog
+
+});//document ready
