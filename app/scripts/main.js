@@ -3,6 +3,7 @@
 
 $(function (){
 
+
 	//client side array of inputted data
 	var arr = [];
 
@@ -21,6 +22,8 @@ $(function (){
 		} else if (user) {
 			//user authenticated with Firebase
 		//	alert('Login Successful!\n' + 'Welcome: ' + user.displayName );
+			if (!loggedIn)
+				logInSuccess(user.displayName);
 			loggedIn = true;
 		} else {
 			//user is logged out
@@ -52,7 +55,8 @@ $(function (){
 		
 		//ensure user is logged in
 		if(loggedIn === false){
-			alert('Error: not logged in \n Please login through the Github popup');
+			console.log("error: cannot push to db not logged in");
+			loggedInPopup();
 		}
 		else {
 			e.preventDefault();
@@ -91,18 +95,42 @@ $(function (){
 	});//form submit
 	
 	//ERROR NOT LOGGED IN!
-	$("#dialog-box-error").dialog({
-	    modal: false,
-	    draggable: true,
-	    resizable: false,
-	    position: ['center', 'center'],
-	    width: 400,
-	    dialogClass: 'ui-dialog-osx',
-	    buttons: {
-	        "I've read and understand this": function() {
-	            $(this).dialog("close");
-	        }
-	    }
-	});//dialog
+	function loggedInPopup() {		
+		$("#dialog-box-error").dialog({
+		    modal: false,
+		    draggable: true,
+		    resizable: false,
+		    position: ['center', 'center'],
+		    width: 400,
+		    dialogClass: 'ui-dialog-osx',
+		    buttons: {
+		        "I've read and understand this": function() {
+		            $(this).dialog("close");
+		        }
+		    }
+		});//dialog
+		//append html to dialog
+		$("#dialog-box-error-text").append("<h3>Not logged in through Github!</h3><p>You need to login through the Github popup to input data. </p><p>Make sure to disable Adblockers if you cannot see it.</p>");
+	}//loggedInPoppp
 
-});//document ready
+	function logInSuccess(name) {
+		$("#dialog-box-success").dialog({
+		    modal: false,
+		    draggable: true,
+		    resizable: false,
+		    position: ['center', 'center'],
+		    width: 400,
+		    dialogClass: 'ui-dialog-osx',
+		    buttons: {
+		        "Okay!": function() {
+		            $(this).dialog("close");
+		        }
+		    }
+		});//dialog
+		//append html to dialog
+		$("#dialog-box-success-text").append("<h3>Welcome: " + name + "!</h3><p>Please input your Name and what Item you're bringing to HackerYou's Salad Club.</p>");
+	}
+
+
+
+});//

@@ -41,12 +41,16 @@
 
 
         <div class="dialog-box" id="dialog-box-error" title="Error!">
-            <h3>Not logged in through Github!</h3>
-            <p>You need to login through the Github popup to input data. </p>
-            <p>Make sure to disable Adblockers if you cannot see it.</p>
+            <div id="dialog-box-error-text">
+            </div>
         </div>
 
-        <!-- build:js scripts/vendor.js -->
+        <div class="dialog-box" id="dialog-box-success" title="Login Successful">
+            <div id="dialog-box-success-text">
+            </div>
+        </div>
+
+        <!-- build:js scrxipts/vendor.js -->
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
         <!-- endbower -->
