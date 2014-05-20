@@ -18,10 +18,10 @@ $(function (){
 		if (error) {
 			// error occurred while attempting login
 			console.log(error);
+			logInError(error);
 		//	alert('Error while attempting to login');
 		} else if (user) {
 			//user authenticated with Firebase
-		//	alert('Login Successful!\n' + 'Welcome: ' + user.displayName );
 			if (!loggedIn)
 				logInSuccess(user.displayName);
 			loggedIn = true;
@@ -71,7 +71,8 @@ $(function (){
 				for(var i = 0; i < arr.length; i++) {
 					//test if item already is being brought
 					if(arr[i].item.toLowerCase() === item.toLowerCase()){
-						alert(arr[i].name + ' is already bringing ' + arr[i].item  +  ' why don\'t you bring something else?');
+						//alert(arr[i].name + ' is already bringing ' + arr[i].item  +  ' why don\'t you bring something else?');
+						itemOverlap(arr[i].name,arr[i].item);
 						alreadyBrought = true;
 					} 
 				}
@@ -110,9 +111,10 @@ $(function (){
 		    }
 		});//dialog
 		//append html to dialog
-		$("#dialog-box-error-text").append("<h3>Not logged in through Github!</h3><p>You need to login through the Github popup to input data. </p><p>Make sure to disable Adblockers if you cannot see it.</p>");
+		$("#dialog-box-error-text").html("<h3>Not logged in through Github!</h3><p>You need to login through the Github popup to input data. </p><p>Make sure to disable Adblockers if you cannot see it.</p>");
 	}//loggedInPoppp
 
+	//confirmation that you logged in successfully.
 	function logInSuccess(name) {
 		$("#dialog-box-success").dialog({
 		    modal: false,
@@ -128,9 +130,45 @@ $(function (){
 		    }
 		});//dialog
 		//append html to dialog
-		$("#dialog-box-success-text").append("<h3>Welcome: " + name + "!</h3><p>Please input your Name and what Item you're bringing to HackerYou's Salad Club.</p>");
+		$("#dialog-box-success-text").html("<h3>Welcome: " + name + "!</h3><p>Please input your Name and what Item you're bringing to HackerYou's Salad Club.</p>");
 	}
 
+	//log in unsuccessful
+	function logInError(error) {
+		$("#dialog-box-loginError").dialog({
+		 	modal: false,
+		    draggable: true,
+		    resizable: false,
+		    position: ['center', 'center'],
+		    width: 400,
+		    dialogClass: 'ui-dialog-osx',
+		    buttons: {
+		        "Okay!": function() {
+		            $(this).dialog("close");
+		        }
+		    }
+		});//dialog
+		//append html to dialog
+		$("#dialog-box-loginError-text").html("<h3>An error occurred while logging in</h3><p>"+error+ "</p><p>Please login through the Github pop up. Disable Adblockers if you cannot see it");
+	}
 
+	//already brought same item
+	function itemOverlap(name, item) {
+		$("#dialog-box-overlapItem-text").html("<h3>How original...</h3><p>" + name + " is already bringing " + item + "<p><p>Why don't you bring something else?</p>");
+		$("#dialog-box-overlapItem").dialog({
+		 	modal: false,
+		    draggable: true,
+		    resizable: false,
+		    position: ['center', 'center'],
+		    width: 400,
+		    dialogClass: 'ui-dialog-osx',
+		    buttons: {
+		        "Okay fine!": function() {
+		            $(this).dialog("close");
+		        }
+		    }
+		});//dialog
+		//append html to dialog
+	}
 
 });//
