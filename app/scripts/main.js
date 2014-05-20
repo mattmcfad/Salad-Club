@@ -92,10 +92,10 @@ $(function (){
 	
 	//ERROR NOT LOGGED IN!
 	$("#dialog-box-error").dialog({
-	    modal: true,
-	    draggable: false,
+	    modal: false,
+	    draggable: true,
 	    resizable: false,
-	    position: ['center', 'top'],
+	    position: ['center', 'center'],
 	    width: 400,
 	    dialogClass: 'ui-dialog-osx',
 	    buttons: {
