@@ -131,7 +131,7 @@ body {
     background: -webkit-linear-gradient(#27AE60, #1E8349);
     background: -moz-linear-gradient(#27AE60, #1E8349);
     background: -o-linear-gradient(#27AE60, #1E8349);
-    background: linear-gradient(#27AE60, #1E8349);          
+    background: linear-gradient(#27AE60, #1E8349);                   
     margin: 20px 0px 20px 0px;
     height: 35px;
     width: 150px;
@@ -190,15 +190,19 @@ body {
 
 
 h2 {
-  font-size: 30px;
-  color: #000;
+  font-size: 16px;
+  color: #fff;
+  font-family: Helvetica;
   text-align: center;
+          
+            a { text-decoration: none;
+                color: $green;
+                font-size: 16px;
+            }
+ }
 
-  a {
-    color: $green;
-    text-decoration: none;
-  }
-}
+
+
 
 .ui-dialog .ui-dialog-buttonpane button{
   margin-right: 2.4em;
