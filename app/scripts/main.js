@@ -1,10 +1,10 @@
-// console.log('\'Allo \'Allo!');
+// @author Matt McFadyen
 'use strict';
 
 $(function (){
 
 
-	//client side array of inputted data
+	//client side array of inputted data / already brought items
 	var arr = [];
 
 	//Get DB from Firebase
@@ -22,8 +22,9 @@ $(function (){
 		//	alert('Error while attempting to login');
 		} else if (user) {
 			//user authenticated with Firebase
-			if (!loggedIn)
+			if (!loggedIn){
 				logInSuccess(user.displayName);
+			}
 			loggedIn = true;
 		} else {
 			//user is logged out
@@ -71,7 +72,7 @@ $(function (){
 				for(var i = 0; i < arr.length; i++) {
 					//test if item already is being brought
 					if(arr[i].item.toLowerCase() === item.toLowerCase()){
-						//alert(arr[i].name + ' is already bringing ' + arr[i].item  +  ' why don\'t you bring something else?');
+						//Someone is already bringing the item! 
 						itemOverlap(arr[i].name,arr[i].item);
 						alreadyBrought = true;
 					} 
@@ -87,8 +88,9 @@ $(function (){
 					});
 					//clear input field
 					$('input').val('');
-				}
-				else {
+				}//someone is bringing that item
+				else { 
+					//clear item input, suggesting they bring something else
 					$('input.item').val('');
 				}
 			}//if name and input fields not empty
@@ -97,6 +99,7 @@ $(function (){
 	
 	//ERROR NOT LOGGED IN!
 	function loggedInPopup() {		
+		//pop up
 		$("#dialog-box-error").dialog({
 		    modal: false,
 		    draggable: true,
@@ -114,8 +117,9 @@ $(function (){
 		$("#dialog-box-error-text").html("<h3>Not logged in through Github!</h3><p>You need to login through the Github popup to input data. </p><p>Make sure to disable Adblockers if you cannot see it.</p>");
 	}//loggedInPoppp
 
-	//confirmation that you logged in successfully.
+	//Confirmation that you logged in successfully.
 	function logInSuccess(name) {
+		//popup
 		$("#dialog-box-success").dialog({
 		    modal: false,
 		    draggable: true,
@@ -135,6 +139,7 @@ $(function (){
 
 	//log in unsuccessful
 	function logInError(error) {
+		//pop up
 		$("#dialog-box-loginError").dialog({
 		 	modal: false,
 		    draggable: true,
@@ -154,7 +159,9 @@ $(function (){
 
 	//already brought same item
 	function itemOverlap(name, item) {
+		//append html to dialog
 		$("#dialog-box-overlapItem-text").html("<h3>How original...</h3><p>" + name + " is already bringing " + item + "<p><p>Why don't you bring something else?</p>");
+		//popup
 		$("#dialog-box-overlapItem").dialog({
 		 	modal: false,
 		    draggable: true,
@@ -168,7 +175,7 @@ $(function (){
 		        }
 		    }
 		});//dialog
-		//append html to dialog
+		
 	}
 
 });//
