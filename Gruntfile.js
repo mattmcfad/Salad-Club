@@ -1,4 +1,4 @@
-// Generated on 2014-05-15 using generator-webapp 0.4.9
+// Generated on 2014-05-20 using generator-webapp 0.4.9
 'use strict';
 
 // # Globbing
@@ -151,7 +151,7 @@ module.exports = function (grunt) {
         // Compiles Sass to CSS and generates necessary files if requested
         sass: {
             options: {
-                includePaths: [
+                loadPath: [
                     'bower_components'
                 ]
             },
@@ -393,14 +393,11 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy:dist',
-        'rev',
         'usemin',
         'htmlmin'
     ]);
 
     grunt.registerTask('default', [
-        'newer:jshint',
-        'test',
         'build'
     ]);
 };
